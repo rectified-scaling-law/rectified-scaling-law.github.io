@@ -129,14 +129,14 @@
               <h1 class="title is-1 publication-title">Selecting Large Language Model to Fine-tune via Rectified Scaling Law</h1>
               <div class="is-size-5 publication-authors">
                 <span class="author-block">
-                  <a href="https://linhaowei1.github.io/" target="_blank">Haowei Lin</a><sup>1</sup>,</span>
+                  <a href="https://linhaowei1.github.io/" target="_blank">Haowei Lin*</a><sup>1</sup>,</span>
                 <span class="author-block">
-                  <a href="http://craftjarvis.org/rectified-scaling-law/" target="_blank">Baizhou Huang</a><sup>1</sup>,</span>
+                  <a href="http://craftjarvis.org/rectified-scaling-law/" target="_blank">Baizhou Huang*</a><sup>1</sup>,</span>
                 <span class="author-block">
-                  <a href="https://haotianye.com/" target="_blank">Haotian Ye</a><sup>2</sup>,
+                  <a href="https://haotianye.com/" target="_blank">Haotian Ye*</a><sup>2</sup>,
                 </span>
                 <span class="author-block">
-                  <a href="http://craftjarvis.org/rectified-scaling-law/" target="_blank">Qinyu Chen</a><sup>1</sup>,
+                  <a href="https://qinyuchen.site" target="_blank">Qinyu Chen</a><sup>1</sup>,
                 </span>
                 <span class="author-block">
                   <a href="http://zhwang4ai.github.io/" target="_blank">Zihao Wang</a><sup>1</sup>,
@@ -261,7 +261,33 @@
       </div>
     </section>
 
-    <section class="section" id="Figure1" style="background-color:#efeff081">
+    <section class="section" id="tldr" style="background-color:#efeff081">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-six-fifths">
+          <h2 class="title is-3">TL;DR</h2>
+        </div>
+      </div>
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <!-- <font color="#224baf" size=4><b> -->
+            <div class="content has-text-justified">
+              <p>
+                We first formulated the problem of LLM selection and rectified the Scaling Law for fine-tuning senarios. Based on this rectified scaling law, we designed an effective method to address model selection problem.
+              </p>
+            </div>
+            <!-- </b></font> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="Figure1" >
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-six-fifths">
+          <h2 class="title is-3">Scaling Law Fails?</h2>
+        </div>
+      </div>
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column is-full-width">
@@ -275,9 +301,11 @@
                     <img id="teaser" width="100%" src="./static/img/intro.png">     
                   </div>
                 </centering>
-                <li>(a) The Pearson correlation between the true full-fine-tuning performance and the predicted performance of three intuitive methods, given different resource constraints denoted by &gamma;. These baseline methods cannot predict performance well especially under demanding constraints (small \( &gamma; \)), and could even provide negatively correlated predictions. 
-                <li>(b) The phase transition phenomenon observed in the scaling of fine-tuning loss \(L\) with training sample size \(D\). In addition to the widely studied power phase where \((L,D)\) are linearly correlated under the log-log scale, we discover the pre-power phase when \(D\) is small. Previous laws fail to fit both phases, while our proposed law fits quite well.
-                <li>(c) Our LLM selection algorithm that extrapolates full-fine-tuning performance based on the new law. 
+                <li> Figure a demonstrates the Pearson correlation between the true full-fine-tuning performance and the predicted performance of 3 heuristic methods, given different resource constraints denoted by &gamma;.
+                These baseline methods cannot predict performance well especially under demanding constraints (small \( &gamma; \)), and could even provide negatively correlated predictions. 
+                <li> Figure b displays the phase transition phenomenon observed in the scaling of fine-tuning loss \(L\) with training sample size \(D\). 
+                 In addition to the widely studied power phase where \((L,D)\) are linearly correlated under the log-log scale, we discover the pre-power phase when \(D\) is small. Previous laws fail to fit both phases, while our proposed law fits quite well.
+                <li> Figure c summarizes our LLM selection algorithm that extrapolates full-fine-tuning performance based on the new law. 
               </p>
             </div>
             <!-- </b></font> -->
@@ -286,7 +314,7 @@
       </div>
     </section>
 
-    <section class="section" id="Figure2">
+    <section class="section" id="Figure2" style="background-color:#efeff081">
       <div class="columns is-centered has-text-centered">
         <div class="column is-six-fifths">
           <!-- <h2 class="title is-3">Pipeline</h2> -->
@@ -302,7 +330,7 @@
               </div>
             </centering>
             <p>
-              The phase transition from pre-power phase to power phase, and the fitness of different Scaling Laws. The x and y axes are fine-tuning dataset size D and test loss L in log scale. Each subfigure corresponds to a dataset. Solid lines are the fitting results of our law, and dash lines are the fitting results of vanilla law.
+              We chose 3 datasets and plotted the phase transition from pre-power phase to power phase, and the fitness of different Scaling Laws. The x and y axes are fine-tuning dataset size D and test loss L in log scale. Each subfigure corresponds to a dataset. Solid lines are the fitting results of our law, and dash lines are the fitting results of vanilla law.
             </p>
             <br>
             <!-- <centering>
@@ -317,7 +345,7 @@
       </div>
     </section>
 
-    <section class="section" id="Algorithm" style="background-color:#efeff081">
+    <section class="section" id="Algorithm" >
       <div class="columns is-centered has-text-centered">
         <div class="column is-six-fifths">
           <h2 class="title is-3">Algorithm and Findings</h2>
@@ -350,7 +378,7 @@
             <br>
             <centering>
               <div style="text-align: center;">
-                <img id="teaser" width="80%" src="static/img/algorithm.png">     
+                <img id="teaser" width="50%" src="static/img/algorithm.png">     
               </div>
             </centering>
             </b>
@@ -360,7 +388,7 @@
       </div>
     </section>
     
-    <section class="section" id="Results">
+    <section class="section" id="Results" style="background-color:#efeff081">
       <div class="columns is-centered has-text-centered">
         <div class="column is-six-fifths">
           <h2 class="title is-3">Results</h2>
@@ -377,12 +405,17 @@
                     <img id="teaser" width="100%" src="./static/img/results.PNG">     
                   </div>
                 </centering>
-                This table summarizes all the models we used in experiments. The Arch. is short for model architecture, De-only, En-De and Moe stands for Decoder-only, Encoder-Decoder and Mixture of Experts respectively. The last few columns summarize the configuration of different language models, including number of parameters, number of layers, dimension of hidden states, number of attention heads, dimension of feed-forward layers, and dimension of key/value head.
+                <p></p>
+                We compared the proposed model selection method (AtS) with 3 intuitive methods. Results show that our method excels under different training budget ratios.
+                <p></p>
                 <centering>
                   <div style="text-align: center;">
                     <img id="teaser" width="100%" src="./static/img/model_info.png">     
                   </div>
                 </centering>
+                <p></p>
+                This table summarizes all the models we used in experiments. The Arch. is short for model architecture, De-only, En-De and Moe stands for Decoder-only, Encoder-Decoder and Mixture of Experts respectively. The last few columns summarize the configuration of different language models, including number of parameters, number of layers, dimension of hidden states, number of attention heads, dimension of feed-forward layers, and dimension of key/value head.
+                <p></p>
               </p>
             </div>
             <!-- </b></font> -->
